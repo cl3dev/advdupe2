@@ -453,7 +453,7 @@ end
 	Returns: <entity> CreatedConstraint
 ]]
 local function CreateConstraintFromTable(Constraint, EntityList, EntityTable, Player, DontEnable)
-
+	if Constraint.Type ~= "Weld" then return end
 	local Factory = duplicator.ConstraintType[ Constraint.Type ]
 	if not Factory then return end
 
